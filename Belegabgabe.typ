@@ -30,8 +30,11 @@
 
 #pagebreak()
 
+#include ("Einleitung.typ")
 #include "Zieldefinition.typ"
 #include "Funktionsbeschreibung.typ"
 #include "Technisches_Konzept.typ"
 #include "Projektstruktur.typ"
 #include "Zeitplan.typ"
+
+#bibliography("assets/Literaturverzeichnis.bib")
