@@ -18,7 +18,7 @@
       matrnr: "s0593402",
     ),
     (
-      name:"DavidThien Vu David Nguyen",
+      name:"David Thien Vu David Nguyen",
       email: "Thien.Nguyen@Student.HTW-Berlin.de",
       matrnr: "",
     ),
