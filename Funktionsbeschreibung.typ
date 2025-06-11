@@ -1,5 +1,6 @@
 = Funktionsbeschreibung
 
+<<<<<<< HEAD
 In diesem Abschnitt wird die Funktionsweise des medizinischen Informationssystems beschrieben. Die Funktionen sind in verschiedene Kategorien unterteilt, um eine klare Struktur zu gewährleisten. 
 
 == virtueller Assistent
@@ -26,3 +27,10 @@ Das Informationsmanagement ermöglicht es dem Patienten, auf wichtige Informatio
 
 == Fortschrittsverfolgung
 Die Fortschrittsverfolgung ermöglicht es dem Patienten, den Fortschritt seiner Therapie zu verfolgen. Der Patient kann den Fortschritt seiner Therapie in der mobilen Anwendung einsehen und bei Bedarf anpassen. Das System bietet auch die Möglichkeit, den Fortschritt der Therapie zu speichern und auszuwerten. Dadurch soll der Patient in der Lage sein, den Erfolg seiner Therapie zu messen und gegebenenfalls Anpassungen vorzunehmen.
+=======
+Die Kernfunktion unserer Therapieadhäsions-App besteht darin, den individuellen Therapieplan der Patientinnen und Patienten schnell und intuitiv einzurichten. Die Medikation kann dabei entweder durch einen QR-Code-Scan automatisch identifiziert oder manuell über ein übersichtliches Formular eingegeben werden. Sobald die Einnahmezeiten definiert sind, übernimmt die App das Erinnerungsmanagement: Einige Minuten vor jeder festgelegten Uhrzeit erhalten die Nutzer:innen eine Push-Benachrichtigung, die sie an die pünktliche Einnahme der Medikamente erinnert. Parallel dazu stellt die Anwendung umfassende Informationen zu den Medikamenten bereit. Mithilfe einer integrierten Datenbank mit Wirkstoff- und Wechselwirkungsdaten können sie sich sofort über die eingenommenen Präparate informieren.
+
+Die Patientinnen und Patienten verfügen darüber hinaus über ein eigenes Profil, in dem persönliche Daten, Therapiepläne und Einnahmeprotokolle sicher gespeichert werden. In den Einstellungen können Benachrichtigungstexte, Erinnerungszeiten und das visuelle Design individuell angepasst werden.
+
+Zahlreiche weitere Funktionen lassen sich optional ergänzen, um die Adhärenz zusätzlich zu fördern und das Nutzererlebnis zu intensivieren. Denkbar sind Motivationshilfen wie Fortschrittsbalken oder Auszeichnungen („Gamification”), die Erfassung von Stimmung und Nebenwirkungen sowie die Anbindung externer Fachquellen (beispielsweise der „Apotheken Umschau”) direkt in die App.
+>>>>>>> 475e2b6be70fee6c7e4fbd124dbf1dd18ee399fc
