@@ -1,10 +1,14 @@
 = Funktionsbeschreibung
 
-<<<<<<< HEAD
-In diesem Abschnitt wird die Funktionsweise des medizinischen Informationssystems beschrieben. Die Funktionen sind in verschiedene Kategorien unterteilt, um eine klare Struktur zu gewährleisten. 
+Die Kernfunktion unserer Therapieadhäsions-App besteht darin, den individuellen Therapieplan der Patientinnen und Patienten schnell und intuitiv einzurichten. Die Medikation kann dabei entweder durch einen QR-Code-Scan automatisch identifiziert oder manuell über ein übersichtliches Formular eingegeben werden. Sobald die Einnahmezeiten definiert sind, übernimmt die App das Erinnerungsmanagement: Einige Minuten vor jeder festgelegten Uhrzeit erhalten die Nutzer:innen eine Push-Benachrichtigung, die sie an die pünktliche Einnahme der Medikamente erinnert. Parallel dazu stellt die Anwendung umfassende Informationen zu den Medikamenten bereit. Mithilfe einer integrierten Datenbank mit Wirkstoff- und Wechselwirkungsdaten können sie sich sofort über die eingenommenen Präparate informieren.
 
-== virtueller Assistent
-Zu den Inforamtionskategorien die Teil der Anwendung sind, wird unsere Anwendung den Nutzer mit einem virtuellen Assistenten unterstützen, der den Nutzer durch die Anwendung führt und bei Fragen zur Verfügung steht und Engagement fördern soll. Der virtuelle Assistent kann auch personalisierte Empfehlungen geben, um die Adhärenz zu erhöhen. Unser erste Konzept für den virtuellen Assistenten ist ein Charakter namens Eva. Angelehnt ist Eva an Figuren aus älteren Ausgaben von der Apothekenumschau. Dieser Chararakter soll den Nutzer ansprechen und eine positive Beziehung aufbauen. Eva wird in der Anwendung als Avatar dargestellt, der mit dem Nutzer interagiert. Der Fortschritt wird mit einer Sonnenblume visualisiert, die wächst, wenn der Nutzer Fortschritte macht. Die Idee ist, dass der Nutzer durch die Interaktion mit Eva und dem Fortschritt der Sonnenblume motiviert wird, seine Therapie einzuhalten.
+Die Patientinnen und Patienten verfügen darüber hinaus über ein eigenes Profil, in dem persönliche Daten, Therapiepläne und Einnahmeprotokolle sicher gespeichert werden. In den Einstellungen können Benachrichtigungstexte, Erinnerungszeiten und das visuelle Design individuell angepasst werden.
+
+Zahlreiche weitere Funktionen lassen sich optional ergänzen, um die Adhärenz zusätzlich zu fördern und das Nutzererlebnis zu intensivieren. Denkbar sind Motivationshilfen wie Fortschrittsbalken oder Auszeichnungen („Gamification”), die Erfassung von Stimmung und Nebenwirkungen sowie die Anbindung externer Fachquellen (beispielsweise der „Apotheken Umschau”) direkt in die App.
+
+
+== Virtueller Assistent
+Zu den Inforamtionskategorien die Teil der Anwendung sind, wird unsere Anwendung den Nutzer mit einem virtuellen Assistenten unterstützen, der den Nutzer durch die Anwendung führt und bei Fragen zur Verfügung steht und Engagement fördern soll. Der virtuelle Assistent kann auch personalisierte Empfehlungen geben, um die Adhärenz zu erhöhen. Unser erste Konzept für den virtuellen Assistenten ist ein Charakter namens Eva. Angelehnt ist Eva an Figuren aus älteren Ausgaben von der Apothekenumschau. Dieser Chararakter soll den Nutzer ansprechen und eine positive Beziehung aufbauen. Eva wird in der Anwendung als Avatar dargestellt, der mit dem Nutzer interagiert. Der Fortschritt wird mit einer Sonnenblume visualisiert, die wächst, wenn der Nutzer Fortschritte macht. Die Idee ist, dass der Nutzer durch die Interaktion mit Eva und dem Fortschritt der Sonnenblume motiviert wird, seine Therapie0 einzuhalten.
 
 #figure(
   image("assets/images/eva_sonnenblume.png", width: 40%),
@@ -27,10 +31,6 @@ Das Informationsmanagement ermöglicht es dem Patienten, auf wichtige Informatio
 
 == Fortschrittsverfolgung
 Die Fortschrittsverfolgung ermöglicht es dem Patienten, den Fortschritt seiner Therapie zu verfolgen. Der Patient kann den Fortschritt seiner Therapie in der mobilen Anwendung einsehen und bei Bedarf anpassen. Das System bietet auch die Möglichkeit, den Fortschritt der Therapie zu speichern und auszuwerten. Dadurch soll der Patient in der Lage sein, den Erfolg seiner Therapie zu messen und gegebenenfalls Anpassungen vorzunehmen.
-=======
-Die Kernfunktion unserer Therapieadhäsions-App besteht darin, den individuellen Therapieplan der Patientinnen und Patienten schnell und intuitiv einzurichten. Die Medikation kann dabei entweder durch einen QR-Code-Scan automatisch identifiziert oder manuell über ein übersichtliches Formular eingegeben werden. Sobald die Einnahmezeiten definiert sind, übernimmt die App das Erinnerungsmanagement: Einige Minuten vor jeder festgelegten Uhrzeit erhalten die Nutzer:innen eine Push-Benachrichtigung, die sie an die pünktliche Einnahme der Medikamente erinnert. Parallel dazu stellt die Anwendung umfassende Informationen zu den Medikamenten bereit. Mithilfe einer integrierten Datenbank mit Wirkstoff- und Wechselwirkungsdaten können sie sich sofort über die eingenommenen Präparate informieren.
 
-Die Patientinnen und Patienten verfügen darüber hinaus über ein eigenes Profil, in dem persönliche Daten, Therapiepläne und Einnahmeprotokolle sicher gespeichert werden. In den Einstellungen können Benachrichtigungstexte, Erinnerungszeiten und das visuelle Design individuell angepasst werden.
-
-Zahlreiche weitere Funktionen lassen sich optional ergänzen, um die Adhärenz zusätzlich zu fördern und das Nutzererlebnis zu intensivieren. Denkbar sind Motivationshilfen wie Fortschrittsbalken oder Auszeichnungen („Gamification”), die Erfassung von Stimmung und Nebenwirkungen sowie die Anbindung externer Fachquellen (beispielsweise der „Apotheken Umschau”) direkt in die App.
->>>>>>> 475e2b6be70fee6c7e4fbd124dbf1dd18ee399fc
+== Benuterverwaltung
+Die Benutzerverwaltung ermöglicht es dem Patienten, sein Profil zu verwalten und persönliche Informationen zu aktualisieren. Der Patient kann seine Kontaktdaten, medizinische Vorgeschichte und andere relevante Informationen aktualisieren. Dadurch soll der Patient in der Lage sein, seine Therapie besser zu organisieren und den Überblick über seine Fortschritte zu behalten. 

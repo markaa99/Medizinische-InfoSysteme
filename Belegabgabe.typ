@@ -18,9 +18,9 @@
       matrnr: "s0593402",
     ),
     (
-      name:"Thien Vu David Nguyen",
+      name:"David Thien Vu David Nguyen",
       email: "Thien.Nguyen@Student.HTW-Berlin.de",
-      matrnr: "s0582419",
+      matrnr: "",
     ),
   ),
 )
@@ -31,8 +31,8 @@
 #pagebreak()
 
 #include ("Einleitung.typ")
-#include "Zieldefinition.typ"
-#include "Funktionsbeschreibung.typ"
+#include ("Zieldefinition.typ")
+#include ("Funktionsbeschreibung.typ")
 #include "Technisches_Konzept.typ"
 #include "Projektstruktur.typ"
 #include "Zeitplan.typ"
