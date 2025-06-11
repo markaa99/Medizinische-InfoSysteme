@@ -1,0 +1,7 @@
+= Funktionsbeschreibung
+
+Die Kernfunktion unserer Therapieadhäsions-App besteht darin, den individuellen Therapieplan der Patientinnen und Patienten schnell und intuitiv einzurichten. Die Medikation kann dabei entweder durch einen QR-Code-Scan automatisch identifiziert oder manuell über ein übersichtliches Formular eingegeben werden. Sobald die Einnahmezeiten definiert sind, übernimmt die App das Erinnerungsmanagement: Einige Minuten vor jeder festgelegten Uhrzeit erhalten die Nutzer:innen eine Push-Benachrichtigung, die sie an die pünktliche Einnahme der Medikamente erinnert. Parallel dazu stellt die Anwendung umfassende Informationen zu den Medikamenten bereit. Mithilfe einer integrierten Datenbank mit Wirkstoff- und Wechselwirkungsdaten können sie sich sofort über die eingenommenen Präparate informieren.
+
+Die Patientinnen und Patienten verfügen darüber hinaus über ein eigenes Profil, in dem persönliche Daten, Therapiepläne und Einnahmeprotokolle sicher gespeichert werden. In den Einstellungen können Benachrichtigungstexte, Erinnerungszeiten und das visuelle Design individuell angepasst werden.
+
+Zahlreiche weitere Funktionen lassen sich optional ergänzen, um die Adhärenz zusätzlich zu fördern und das Nutzererlebnis zu intensivieren. Denkbar sind Motivationshilfen wie Fortschrittsbalken oder Auszeichnungen („Gamification”), die Erfassung von Stimmung und Nebenwirkungen sowie die Anbindung externer Fachquellen (beispielsweise der „Apotheken Umschau”) direkt in die App.
