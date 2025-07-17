@@ -1,5 +1,11 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createContext, useContext, useEffect, useState } from "react";
+import {
+    cancelAllMedicationNotifications,
+    cancelMedicationNotifications,
+    scheduleAllMedicationNotifications,
+    scheduleMedicationNotifications
+} from "./NotificationService";
 import UserContext from "./UserContext";
 
 const RemindersContext = createContext();
@@ -19,14 +25,21 @@ export const RemindersProvider = ({ children }) => {
       const logs = JSON.parse(await AsyncStorage.getItem(logKey)) || {};
       setMedications(meds);
       setIntakeLogs(logs);
+      
+      // Benachrichtigungen für alle Medikamente planen
+      if (meds.length > 0) {
+        await scheduleAllMedicationNotifications(meds);
+      }
     };
     load();
-  }, [storageKey]);
+  }, [storageKey, logKey]);
 
   const saveMedications = async (data) => {
     setMedications(data);
     if (storageKey) {
       await AsyncStorage.setItem(storageKey, JSON.stringify(data));
+      // Benachrichtigungen neu planen
+      await scheduleAllMedicationNotifications(data);
     }
   };
 
@@ -37,14 +50,18 @@ export const RemindersProvider = ({ children }) => {
     }
   };
 
-  const addMedication = (med) => {
+  const addMedication = async (med) => {
     const updated = [...medications, med];
-    saveMedications(updated);
+    await saveMedications(updated);
+    // Benachrichtigungen für das neue Medikament planen
+    await scheduleMedicationNotifications(med);
   };
 
-  const removeMedication = (id) => {
+  const removeMedication = async (id) => {
     const updated = medications.filter((m) => m.id !== id);
-    saveMedications(updated);
+    await saveMedications(updated);
+    // Benachrichtigungen für das gelöschte Medikament entfernen
+    await cancelMedicationNotifications(id);
   };
 
   const logIntake = ({ medId, date, time, status }) => {
@@ -56,6 +73,16 @@ export const RemindersProvider = ({ children }) => {
     saveIntakeLogs(updatedLogs);
   };
 
+  const refreshNotifications = async () => {
+    if (medications.length > 0) {
+      await scheduleAllMedicationNotifications(medications);
+    }
+  };
+
+  const clearAllNotifications = async () => {
+    await cancelAllMedicationNotifications();
+  };
+
   return (
     <RemindersContext.Provider
       value={{
@@ -64,6 +91,8 @@ export const RemindersProvider = ({ children }) => {
         addMedication,
         removeMedication,
         logIntake,
+        refreshNotifications,
+        clearAllNotifications,
       }}
     >
       {children}

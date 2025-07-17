@@ -15,7 +15,7 @@ import AddMedicationModal from "./AddMedicationModal";
 import RemindersContext from "./RemindersContext";
 
 export default function MedicationList({ navigation }) {
-  const { medications, addMedication, removeMedication } =
+  const { medications, addMedication, removeMedication, refreshNotifications } =
     useContext(RemindersContext);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -72,6 +72,16 @@ export default function MedicationList({ navigation }) {
       </TouchableOpacity>
 
       <TouchableOpacity
+        style={styles.refreshButton}
+        onPress={async () => {
+          await refreshNotifications();
+          alert("Benachrichtigungen wurden aktualisiert!");
+        }}
+      >
+        <Text style={styles.refreshButtonText}>🔔 Erinnerungen</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
         style={styles.profileButton}
         onPress={() => navigation.navigate("Profile")}
       >
@@ -81,14 +91,14 @@ export default function MedicationList({ navigation }) {
       <Modal visible={modalVisible} animationType="slide">
         <AddMedicationModal
           onClose={() => setModalVisible(false)}
-          onConfirm={(name, dosage, times) => {
+          onConfirm={async (name, dosage, times) => {
             const newMed = {
               id: uuidv4(),
               name,
               dosage,
               times, // z. B. ["08:00", "20:00"]
             };
-            addMedication(newMed);
+            await addMedication(newMed);
             setModalVisible(false);
           }}
         />
@@ -198,6 +208,23 @@ const styles = StyleSheet.create({
   },
 
   profileButtonText: {
+    color: "#fff",
+    fontSize: 14,
+    fontWeight: "600",
+  },
+
+  refreshButton: {
+    position: "absolute",
+    bottom: 90,
+    right: 24,
+    backgroundColor: "#f59e0b",
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 20,
+    elevation: 4,
+  },
+  
+  refreshButtonText: {
     color: "#fff",
     fontSize: 14,
     fontWeight: "600",

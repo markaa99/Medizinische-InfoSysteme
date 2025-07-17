@@ -1,9 +1,13 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useContext, useEffect, useRef } from "react";
+import { Alert } from "react-native";
 import 'react-native-get-random-values';
 
-import { requestNotificationPermission } from "./components/NotificationService";
+import {
+  addNotificationResponseListener,
+  requestNotificationPermission
+} from "./components/NotificationService";
 import { RemindersProvider } from "./components/RemindersContext";
 import UserContext, { UserProvider } from "./components/UserContext";
 
@@ -25,6 +29,34 @@ function MainNavigator() {
   }, []);
 
   useEffect(() => {
+    // Notification Response Handler
+    const subscription = addNotificationResponseListener((response) => {
+      const { medId, medName, dosage, scheduledTime } = response.notification.request.content.data;
+      
+      Alert.alert(
+        "🔔 Medikament-Erinnerung",
+        `Es ist Zeit für ${medName} (${dosage})\nGeplant für: ${scheduledTime}`,
+        [
+          {
+            text: "Später erinnern",
+            style: "cancel"
+          },
+          {
+            text: "Zu Details",
+            onPress: () => {
+              if (navigationRef.current && user) {
+                navigationRef.current.navigate("MedDetail", { medId });
+              }
+            }
+          }
+        ]
+      );
+    });
+
+    return () => subscription.remove();
+  }, [user]);
+
+  useEffect(() => {
     if (!loadingUser && !user && navigationRef.current) {
       navigationRef.current.reset({
         index: 0,
@@ -36,7 +68,7 @@ function MainNavigator() {
   if (loadingUser) return null;
 
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Stack.Navigator>
         {!user ? (
           <Stack.Screen
